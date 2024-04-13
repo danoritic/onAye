@@ -1,0 +1,118 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /places/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /checkIns/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /privateChatReal/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /placeChatReal/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /reactionsFromUsers/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /users/{parent}/userPotentialChatMate/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/userPotentialChatMate/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/friend/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/friend/{document} {
+      allow read: if true;
+    }
+
+
+    match /checkinRadius/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /users/{parent}/unreadMessages/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/unreadMessages/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/placeUserCheckedInto/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/placeUserCheckedInto/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/UserNotification/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/UserNotification/{document} {
+      allow read: if true;
+    }
+
+
+    match /ff_user_push_notifications/{id} {
+      allow read, update, delete: if false;
+      allow create: if /databases/$(database)/documents/users/$(request.auth.uid) == request.resource.data.sender;
+    }
+  }
+}

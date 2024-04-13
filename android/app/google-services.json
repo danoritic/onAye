@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "683040158819",
+    "project_id": "onlife-3l26ul",
+    "storage_bucket": "onlife-3l26ul.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683040158819:android:4ffd9e2664889052c5f456",
+        "android_client_info": {
+          "package_name": "com.onlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683040158819-6733e2k7nvf5072jkkbal0numk6hcksq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlife",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "683040158819-50vhh4110o8lij52n6sspptk0hsg2i04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuSAvi0vL5uqKhhlcyPlfwTXQ2IsR52lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683040158819-50vhh4110o8lij52n6sspptk0hsg2i04.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "683040158819-9uvuenmtjk5fruppuqcdk4f42noeknco.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.onlife"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
